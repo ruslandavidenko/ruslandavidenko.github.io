@@ -6,16 +6,11 @@
   <title>Ruslan Davidenko | AI Research Engineer</title>
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
     body{
       font-family:Arial, Helvetica, sans-serif;
-      background:#0f172a;
+      background:#020617;
       color:white;
       line-height:1.7;
     }
@@ -29,8 +24,26 @@
       text-align:center;
       padding:40px 20px;
       background:
-      linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.95)),
-      radial-gradient(circle at top right,#2563eb33,transparent 35%);
+        radial-gradient(circle at top left,#2563eb55,transparent 30%),
+        radial-gradient(circle at bottom right,#7c3aed44,transparent 35%),
+        linear-gradient(135deg,#020617,#0f172a);
+      animation:fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .badge{
+      background:#1e293b;
+      color:#93c5fd;
+      padding:10px 18px;
+      border-radius:999px;
+      margin-bottom:25px;
+      border:1px solid #3b82f6;
+      box-shadow:0 0 18px rgba(59,130,246,0.4);
+      font-weight:bold;
     }
 
     .profile-pic{
@@ -40,24 +53,22 @@
       object-fit:cover;
       border:5px solid #3b82f6;
       margin-bottom:35px;
-      box-shadow:0 0 35px rgba(59,130,246,0.7);
+      box-shadow:0 0 40px rgba(59,130,246,0.8);
     }
 
-    header h1{
+    h1{
       font-size:72px;
       margin-bottom:20px;
       font-weight:800;
     }
 
     header p{
-      max-width:950px;
+      max-width:980px;
       font-size:24px;
       color:#cbd5e1;
     }
 
-    .buttons{
-      margin-top:40px;
-    }
+    .buttons{margin-top:40px;}
 
     .btn{
       display:inline-block;
@@ -68,20 +79,22 @@
       text-decoration:none;
       border-radius:12px;
       font-weight:bold;
-      transition:0.3s ease;
+      transition:0.3s;
       font-size:18px;
+      box-shadow:0 0 20px rgba(37,99,235,0.35);
     }
 
     .btn:hover{
       background:#3b82f6;
       transform:translateY(-5px);
-      box-shadow:0 10px 25px rgba(37,99,235,0.5);
+      box-shadow:0 12px 30px rgba(59,130,246,0.55);
     }
 
     section{
       max-width:1200px;
       margin:auto;
-      padding:80px 20px;
+      padding:85px 20px;
+      animation:fadeIn 1s ease-in-out;
     }
 
     h2{
@@ -91,43 +104,46 @@
       text-align:center;
     }
 
-    .skills{
+    .skills,.certs{
       display:flex;
       flex-wrap:wrap;
       gap:15px;
       justify-content:center;
     }
 
-    .skill{
-      background:#1e293b;
+    .skill,.cert{
+      background:#0f172a;
       padding:14px 22px;
       border-radius:12px;
       font-weight:bold;
+      border:1px solid #1d4ed8;
       transition:0.3s;
     }
 
-    .skill:hover{
+    .skill:hover,.cert:hover{
       background:#2563eb;
       transform:translateY(-4px);
+      box-shadow:0 0 20px rgba(37,99,235,0.45);
     }
 
-    .projects{
+    .projects,.timeline,.publications{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
       gap:30px;
     }
 
     .card{
-      background:#1e293b;
+      background:#0f172a;
       padding:35px;
       border-radius:18px;
       transition:0.4s;
-      border:1px solid rgba(255,255,255,0.05);
+      border:1px solid rgba(96,165,250,0.25);
+      box-shadow:0 0 20px rgba(15,23,42,0.7);
     }
 
     .card:hover{
       transform:translateY(-10px);
-      box-shadow:0 15px 35px rgba(0,0,0,0.4);
+      box-shadow:0 18px 40px rgba(37,99,235,0.28);
     }
 
     .card h3{
@@ -136,12 +152,25 @@
       font-size:24px;
     }
 
-    .card p{
+    .card p,.card li{
       color:#cbd5e1;
       font-size:17px;
     }
 
-    .focus{
+    .screenshot{
+      height:150px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+      margin-bottom:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:bold;
+      letter-spacing:1px;
+    }
+
+    .focus,.contact{
       text-align:center;
       max-width:900px;
       margin:auto;
@@ -149,9 +178,7 @@
       color:#cbd5e1;
     }
 
-    .links{
-      text-align:center;
-    }
+    .links{text-align:center;}
 
     .links a{
       display:inline-block;
@@ -173,39 +200,25 @@
     footer{
       text-align:center;
       padding:45px;
-      background:#111827;
+      background:#020617;
       color:#94a3b8;
       margin-top:60px;
+      border-top:1px solid #1e293b;
     }
 
     @media(max-width:768px){
-
-      header h1{
-        font-size:48px;
-      }
-
-      header p{
-        font-size:20px;
-      }
-
-      .profile-pic{
-        width:150px;
-        height:150px;
-      }
-
-      h2{
-        font-size:34px;
-      }
-
+      h1{font-size:46px;}
+      header p{font-size:19px;}
+      .profile-pic{width:150px;height:150px;}
+      h2{font-size:34px;}
     }
-
   </style>
-
 </head>
 
 <body>
 
 <header>
+  <div class="badge">Currently Open to AI Research, LLM Evaluation & RLHF Opportunities</div>
 
   <img src="profile.jpg" alt="Ruslan Davidenko" class="profile-pic">
 
@@ -213,31 +226,20 @@
 
   <p>
     AI Research Engineer specializing in Large Language Model Evaluation,
-    Reinforcement Learning from Human Feedback (RLHF),
-    Natural Language Processing, Graph Neural Networks,
-    AI Safety, Benchmarking, and Scalable ML Systems.
+    Reinforcement Learning from Human Feedback, Natural Language Processing,
+    Graph Neural Networks, AI Safety, Benchmarking, and Scalable ML Systems.
   </p>
 
   <div class="buttons">
-
-    <a class="btn" href="https://github.com/ruslandavidenko" target="_blank">
-      GitHub
-    </a>
-
-    <a class="btn" href="https://www.linkedin.com/in/ruslan-davidenko-65b9a3409" target="_blank">
-      LinkedIn
-    </a>
-
+    <a class="btn" href="Ruslan_Davidenko_CV.pdf" target="_blank">Download Resume</a>
+    <a class="btn" href="https://github.com/ruslandavidenko" target="_blank">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/ruslan-davidenko-65b9a3409" target="_blank">LinkedIn</a>
   </div>
-
 </header>
 
 <section>
-
   <h2>Technical Skills</h2>
-
   <div class="skills">
-
     <div class="skill">Python</div>
     <div class="skill">PyTorch</div>
     <div class="skill">TensorFlow</div>
@@ -250,85 +252,133 @@
     <div class="skill">SQL</div>
     <div class="skill">Machine Learning</div>
     <div class="skill">Data Analysis</div>
-
   </div>
-
 </section>
 
 <section>
-
   <h2>Featured Projects</h2>
-
   <div class="projects">
 
     <div class="card">
-
+      <div class="screenshot">LLM Evaluation Dashboard</div>
       <h3>LLM Evaluation & RLHF Pipeline</h3>
-
       <p>
-        Built structured evaluation workflows for factuality,
-        alignment, coherence, safety scoring, and RLHF evaluation
-        of Large Language Models.
+        Structured evaluation workflows for factuality, alignment,
+        coherence, safety scoring, and RLHF evaluation of Large Language Models.
       </p>
-
+      <br>
+      <a class="btn" href="https://github.com/ruslandavidenko/llm-evaluation-rlhf-pipeline" target="_blank">View Project</a>
     </div>
 
     <div class="card">
-
+      <div class="screenshot">Graph ML Benchmarking</div>
       <h3>Graph Neural Network Benchmarking</h3>
-
       <p>
-        Designed benchmarking pipelines for GCN, GAT,
-        and GraphSAGE architectures across large-scale
-        graph datasets and predictive modeling tasks.
+        Benchmarking pipelines for GCN, GAT, and GraphSAGE architectures
+        across graph datasets and predictive modeling tasks.
       </p>
-
+      <br>
+      <a class="btn" href="https://github.com/ruslandavidenko" target="_blank">View Project</a>
     </div>
 
     <div class="card">
-
+      <div class="screenshot">Annotation QA Workflow</div>
       <h3>AI Annotation Quality Assurance</h3>
-
       <p>
-        Developed annotation QA and validation workflows
-        for AI-generated outputs including ranking,
-        relevance scoring, and safety evaluation.
+        Annotation QA workflows for AI-generated outputs including ranking,
+        relevance scoring, factuality checks, and safety evaluation.
       </p>
-
+      <br>
+      <a class="btn" href="https://github.com/ruslandavidenko" target="_blank">View Project</a>
     </div>
 
   </div>
-
 </section>
 
 <section>
+  <h2>Experience Timeline</h2>
+  <div class="timeline">
 
+    <div class="card">
+      <h3>Principal AI & Network Science Research Engineer</h3>
+      <p>Google | 2023 – Present</p>
+      <p>GNN research, LLM evaluation, benchmarking, ML pipelines, and AI safety workflows.</p>
+    </div>
+
+    <div class="card">
+      <h3>Senior Machine Learning Researcher</h3>
+      <p>Microsoft | 2020 – 2022</p>
+      <p>LLM/NLP evaluation, graph ML, experimentation workflows, and technical reporting.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Training Specialist</h3>
+      <p>TELUS International | 2018 – 2020</p>
+      <p>RLHF workflows, annotation QA, model output evaluation, and dataset validation.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Research & Publications</h2>
+  <div class="publications">
+
+    <div class="card">
+      <h3>Graph Representation Learning for Large-Scale Complex Networks</h3>
+      <p>International Conference on Machine Learning Systems, 2019</p>
+    </div>
+
+    <div class="card">
+      <h3>Deep Learning Approaches for Dynamic Network Modeling</h3>
+      <p>Journal of Artificial Intelligence Research, 2020</p>
+    </div>
+
+    <div class="card">
+      <h3>Machine Learning Frameworks for Network Analysis</h3>
+      <p>International Journal of Data Science and Analytics, 2021</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="certs">
+    <div class="cert">Advanced Machine Learning Specialization</div>
+    <div class="cert">Natural Language Processing Certification</div>
+    <div class="cert">Deep Learning & Neural Networks</div>
+    <div class="cert">Python for Data Science and AI</div>
+    <div class="cert">Data Structures and Algorithms</div>
+  </div>
+</section>
+
+<section>
   <h2>Professional Focus</h2>
-
   <p class="focus">
     Focused on AI research, scalable machine learning systems,
-    evaluation frameworks, graph machine learning,
-    LLM benchmarking, and NLP evaluation workflows.
+    LLM benchmarking, RLHF evaluation, graph machine learning,
+    NLP evaluation workflows, and reproducible model evaluation pipelines.
   </p>
-
 </section>
 
 <section>
+  <h2>Contact</h2>
+  <p class="contact">
+    Available for remote AI research, LLM evaluation, RLHF, machine learning,
+    benchmarking, and technical research projects.
+    <br><br>
+    Email: ruslandavidenko0706@email.com
+  </p>
+</section>
 
+<section>
   <h2>Professional Links</h2>
-
   <div class="links">
-
-    <a href="https://github.com/ruslandavidenko" target="_blank">
-      GitHub
-    </a>
-
-    <a href="https://www.linkedin.com/in/ruslan-davidenko-65b9a3409" target="_blank">
-      LinkedIn
-    </a>
-
+    <a href="https://github.com/ruslandavidenko" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/ruslan-davidenko-65b9a3409" target="_blank">LinkedIn</a>
+    <a href="Ruslan_Davidenko_CV.pdf" target="_blank">Download Resume</a>
   </div>
-
 </section>
 
 <footer>
